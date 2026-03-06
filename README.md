@@ -2,11 +2,11 @@
 
 ---
 
-## Module 1: Oracle SQL
+## Module 1 : Oracle SQL
 
 ---
 
-## Module 2: Fundamentals
+## Module 2 : Fundamentals
 
 - **2A. Manual Testing**
 - **2B. Linux**
@@ -17,7 +17,7 @@
 
 ---
 
-## Module 3: Python
+## Module 3 : Python
 
 - **3A. Python Fundamentals**
 - **3B. NumPy & Pandas**
@@ -25,14 +25,14 @@
 
 ---
 
-## Module 4: Machine Learning
+## Module 4 : Machine Learning
 
 ---
 
-## Module 5: Deep Learning
+## Module 5 : Deep Learning
 
 ---
 
-## Module 6: Selenium
+## Module 6 : Selenium
 
 ---
