@@ -6,16 +6,25 @@ Questions
 4. Open https://demoqa.com/select-menu
 Target first dropdown in that page and select first option
 5.	Print All Links in amazon Page
+6.	Print Auto Suggestions of any site
+7.	From the “Accounts & Lists” section on the Amazon homepage, select the “Your Wish List” option.
+8.	Access the content displayed inside the embedded page and print the heading text visible inside it.
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe
+9.	Search Laptop and print all product titles.
 '''
-
 from time import sleep
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.support.select import Select
-
-o=ChromeOptions()
-o.add_experimental_option(name="detach",value=True)
-driver=Chrome(options=o)
+from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver.common.by import By
+from time import sleep
+o = ChromeOptions()
+o.add_experimental_option(name="detach", value=True)
+driver = Chrome(options=o)
 driver.maximize_window()
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 '''1st Question'''
 # driver.get("https://www.amazon.in")
@@ -45,12 +54,6 @@ driver.maximize_window()
 # sleep(2)
 
 '''5th Question'''
-# driver.get("https://www.amazon.in")
-# sleep(4)
-# a=driver.find_elements("xpath","//div[@class='nav-div']")
-# for i in a :
-#     print(i.text)
-
 # driver.get("https://www.amazon.in/")
 # sleep(3)
 # links = driver.find_elements(By.TAG_NAME,"a")
@@ -66,30 +69,29 @@ driver.maximize_window()
 # for s in suggestions:
 #     print(s.text)
 
-
 ''' Question 7 '''
-# driver.get("https://www.amazon.com")
-# sleep(3)
-# account = driver.find_element(By.ID, "nav-link-accountList")
-# actions = ActionChains(driver)
-# actions.move_to_element(account).perform()
+# driver.get("https://www.amazon.in/")
+# sleep(4)
+# a = driver.find_element("id", "nav-link-accountList")
+# o = ActionChains(driver)
+# o.move_to_element(a).perform()
 # sleep(2)
-# driver.find_element(By.LINK_TEXT, "Create a List").click()
+# driver.find_element(By.LINK_TEXT, "Your Wish List").click()
 
 ''' Question 8 '''
 # driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_iframe")
-# sleep(3)
 # driver.switch_to.frame("iframeResult")
 # driver.switch_to.frame(0)
-# heading = driver.find_element(By.TAG_NAME, "h1").text
-# print("Heading:", heading)
+# a = driver.find_element(By.TAG_NAME, "h1").text
+# print(a)
 
 ''' Question 9 '''
-# driver.get("https://www.amazon.com")
-# sleep(3)
-# search = driver.find_element(By.ID, "twotabsearchtextbox")
-# search.send_keys("Laptop", Keys.ENTER)
+# driver.get("https://www.amazon.in/")
 # sleep(5)
-# titles = driver.find_elements(By.XPATH, "//h2//span")
-# for t in titles:
-#     print(t.text)
+# a = driver.find_element("id", "twotabsearchtextbox")
+# a.send_keys("Laptop")
+# a.send_keys(Keys.ENTER)
+# sleep(3)
+# a = driver.find_elements("xpath", "//h2//span")
+# for i in a:
+#     print(i.text)
